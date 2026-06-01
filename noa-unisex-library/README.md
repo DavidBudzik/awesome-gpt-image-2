@@ -61,8 +61,8 @@ prompts surfaced five reusable techniques, each applied here:
 
 - **Customize variables** — each card exposes its `{argument}` fields as inputs;
   edit them and the prompt preview updates live.
-- **Copy resolved prompt** — copies the prompt with your values filled in (paste
-  straight into GPT Image 2 / Nano Banana Pro).
+- **Copy prompt** — copies the prompt with your values filled in (paste straight
+  into your image model of choice).
 - **Copy as sentence** — flattens the (resolved) prompt into one natural-language
   paragraph for prose-only models like Midjourney and DALL·E.
 - **Copy with {args}** — copies the template form (placeholders intact) for
