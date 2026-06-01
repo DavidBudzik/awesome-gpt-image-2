@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>🍌 GPT Image 2 Prompt Library</title>
+<style>
+  :root {
+    --bg: #0f1117; --panel: #171a23; --panel2: #1f2430; --border: #2a3040;
+    --text: #e7e9ee; --muted: #9aa4b8; --accent: #f5c518; --accent2: #7c5cff;
+    --code: #11131a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  header {
+    position: sticky; top: 0; z-index: 10; background: rgba(15,17,23,.92);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 18px 20px;
+  }
+  h1 { margin: 0 0 4px; font-size: 22px; }
+  .sub { color: var(--muted); font-size: 13px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; align-items: center; }
+  #search {
+    flex: 1 1 280px; min-width: 200px; padding: 10px 14px; border-radius: 10px;
+    border: 1px solid var(--border); background: var(--panel2); color: var(--text); font-size: 14px;
+  }
+  #search:focus { outline: 2px solid var(--accent2); }
+  select {
+    padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border);
+    background: var(--panel2); color: var(--text); font-size: 14px;
+  }
+  .count { color: var(--muted); font-size: 13px; white-space: nowrap; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 20px 0; }
+  .chip {
+    padding: 6px 12px; border-radius: 999px; border: 1px solid var(--border);
+    background: var(--panel); color: var(--muted); font-size: 12px; cursor: pointer; user-select: none;
+  }
+  .chip.active { background: var(--accent2); color: #fff; border-color: var(--accent2); }
+  main {
+    display: grid; gap: 18px; padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); max-width: 1500px; margin: 0 auto;
+  }
+  .card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 14px;
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  .thumb { width: 100%; aspect-ratio: 4/3; object-fit: cover; background: var(--panel2); cursor: zoom-in; }
+  .no-thumb { aspect-ratio: 4/3; display: grid; place-items: center; color: var(--muted); background: var(--panel2); font-size: 32px; }
+  .body { padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-size: 11px; padding: 2px 8px; border-radius: 6px; background: var(--panel2); color: var(--muted); }
+  .tag.featured { background: var(--accent); color: #000; font-weight: 600; }
+  .title { font-size: 16px; font-weight: 600; margin: 0; }
+  .desc { color: var(--muted); font-size: 13px; margin: 0; }
+  pre {
+    margin: 0; background: var(--code); border: 1px solid var(--border); border-radius: 10px;
+    padding: 10px 12px; font-size: 12px; max-height: 220px; overflow: auto; white-space: pre-wrap; word-break: break-word;
+  }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; padding-top: 4px; }
+  button.btn, a.btn {
+    border: 1px solid var(--border); background: var(--panel2); color: var(--text);
+    padding: 7px 12px; border-radius: 8px; font-size: 13px; cursor: pointer; text-decoration: none;
+  }
+  button.btn:hover, a.btn:hover { border-color: var(--accent2); }
+  .btn.primary { background: var(--accent2); border-color: var(--accent2); color: #fff; }
+  .meta { font-size: 12px; color: var(--muted); }
+  .meta a { color: var(--accent2); text-decoration: none; }
+  .empty { grid-column: 1/-1; text-align: center; color: var(--muted); padding: 60px 0; }
+  /* lightbox */
+  #lb { position: fixed; inset: 0; background: rgba(0,0,0,.85); display: none; place-items: center; z-index: 50; padding: 30px; }
+  #lb.open { display: grid; }
+  #lb img { max-width: 100%; max-height: 100%; border-radius: 8px; }
+  footer { text-align: center; color: var(--muted); font-size: 12px; padding: 30px 20px 50px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🍌 GPT Image 2 Prompt Library</h1>
+  <div class="sub">A browsable, copy-ready library built from this repo's curated collection.</div>
+  <div class="controls">
+    <input id="search" type="search" placeholder="Search title, description, or prompt text…" />
+    <select id="sort">
+      <option value="featured">Featured first</option>
+      <option value="title">Title A–Z</option>
+      <option value="category">Category</option>
+    </select>
+    <span class="count" id="count"></span>
+  </div>
+</header>
+<div class="chips" id="chips"></div>
+<main id="grid"></main>
+<div id="lb"><img alt="" /></div>
+<footer>Generated from <code>README.md</code> · Prompts licensed CC BY 4.0 · Run <code>python3 prompt-library/build.py</code> to refresh.</footer>
+
+<script src="prompts.js"></script>
+<script>
+  const PROMPTS = (window.PROMPTS || []).map((p, i) => ({ ...p, _i: i }));
+  const grid = document.getElementById('grid');
+  const chipsEl = document.getElementById('chips');
+  const searchEl = document.getElementById('search');
+  const sortEl = document.getElementById('sort');
+  const countEl = document.getElementById('count');
+  const lb = document.getElementById('lb');
+  let activeCat = 'All';
+
+  const categories = ['All', ...Array.from(new Set(
+    PROMPTS.map(p => p.category).filter(Boolean))).sort()];
+
+  function esc(s) {
+    return (s || '').replace(/[&<>"]/g, c =>
+      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  }
+
+  function renderChips() {
+    chipsEl.innerHTML = categories.map(c =>
+      `<span class="chip ${c === activeCat ? 'active' : ''}" data-cat="${esc(c)}">${esc(c)}</span>`
+    ).join('');
+  }
+
+  function filtered() {
+    const q = searchEl.value.trim().toLowerCase();
+    let list = PROMPTS.filter(p => {
+      if (activeCat !== 'All' && p.category !== activeCat) return false;
+      if (!q) return true;
+      return (p.title + ' ' + p.category + ' ' + p.description + ' ' + p.prompt)
+        .toLowerCase().includes(q);
+    });
+    const s = sortEl.value;
+    list.sort((a, b) => {
+      if (s === 'title') return a.title.localeCompare(b.title);
+      if (s === 'category') return (a.category || '~').localeCompare(b.category || '~') || a.title.localeCompare(b.title);
+      return (b.featured - a.featured) || a._i - b._i; // featured
+    });
+    return list;
+  }
+
+  function card(p) {
+    const thumb = p.images && p.images[0]
+      ? `<img class="thumb" loading="lazy" src="${esc(p.images[0])}" alt="${esc(p.title)}" data-full="${esc(p.images[0])}" />`
+      : `<div class="no-thumb">🍌</div>`;
+    const tags = [
+      p.featured ? `<span class="tag featured">⭐ Featured</span>` : '',
+      p.category ? `<span class="tag">${esc(p.category)}</span>` : '',
+    ].join('');
+    const meta = [
+      p.author ? `by <a href="${esc(p.authorLink)}" target="_blank" rel="noopener">${esc(p.author)}</a>` : '',
+      p.source ? `<a href="${esc(p.source)}" target="_blank" rel="noopener">source</a>` : '',
+    ].filter(Boolean).join(' · ');
+    const tryBtn = p.link ? `<a class="btn primary" href="${esc(p.link)}" target="_blank" rel="noopener">Try it ↗</a>` : '';
+    return `<article class="card">
+      ${thumb}
+      <div class="body">
+        <div class="tags">${tags}</div>
+        <h2 class="title">${esc(p.title)}</h2>
+        <p class="desc">${esc(p.description)}</p>
+        <pre>${esc(p.prompt)}</pre>
+        ${meta ? `<div class="meta">${meta}</div>` : ''}
+        <div class="actions">
+          <button class="btn" data-copy="${p._i}">📋 Copy prompt</button>
+          ${tryBtn}
+        </div>
+      </div>
+    </article>`;
+  }
+
+  function render() {
+    const list = filtered();
+    countEl.textContent = `${list.length} of ${PROMPTS.length} prompts`;
+    grid.innerHTML = list.length
+      ? list.map(card).join('')
+      : `<div class="empty">No prompts match your search.</div>`;
+  }
+
+  chipsEl.addEventListener('click', e => {
+    const c = e.target.dataset.cat;
+    if (!c) return;
+    activeCat = c; renderChips(); render();
+  });
+  searchEl.addEventListener('input', render);
+  sortEl.addEventListener('change', render);
+
+  grid.addEventListener('click', e => {
+    const copyBtn = e.target.closest('[data-copy]');
+    if (copyBtn) {
+      const p = PROMPTS[+copyBtn.dataset.copy];
+      navigator.clipboard.writeText(p.prompt).then(() => {
+        const t = copyBtn.textContent; copyBtn.textContent = '✓ Copied!';
+        setTimeout(() => copyBtn.textContent = t, 1200);
+      });
+      return;
+    }
+    const img = e.target.closest('.thumb');
+    if (img) { lb.querySelector('img').src = img.dataset.full; lb.classList.add('open'); }
+  });
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+
+  renderChips();
+  render();
+</script>
+</body>
+</html>
