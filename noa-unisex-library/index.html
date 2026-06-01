@@ -23,6 +23,8 @@
   .head-inner { max-width: 1400px; margin: 0 auto; }
   .wordmark { font-size: 40px; font-weight: 800; letter-spacing: .22em; color: var(--ink); margin: 0; }
   .tagline { color: var(--muted); margin: 4px 0 0; letter-spacing: .04em; }
+  .compat { margin: 12px 0 0; font-size: 12.5px; color: var(--olive); background: rgba(255,255,255,.5); border: 1px solid var(--line); border-radius: 10px; padding: 9px 13px; max-width: 880px; }
+  .compat .tip { display: block; color: var(--muted); margin-top: 4px; }
   .kit { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
   .swatch { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--muted); background: rgba(255,255,255,.45); border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px 4px 5px; }
   .dot { width: 14px; height: 14px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(0,0,0,.06); }
@@ -78,7 +80,9 @@
 <header>
   <div class="head-inner">
     <h1 class="wordmark">noa</h1>
-    <p class="tagline">unisex essentials in warm earth — prompt library for GPT&nbsp;Image&nbsp;2</p>
+    <p class="tagline">unisex essentials in warm earth — a platform-agnostic image-prompt library</p>
+    <p class="compat">✺ Works with any text-to-image model — Midjourney · DALL·E 3 · GPT Image · Stable Diffusion / Flux · Ideogram · Firefly · Nano Banana &amp; more.
+      <span class="tip">Tip: “Structured JSON” prompts give the most control on GPT&nbsp;Image / Flux / SD; on Midjourney or DALL·E, use the “Copy as sentence” button to flatten them into a natural-language paragraph.</span></p>
     <div class="kit">
       <span class="swatch"><span class="dot" style="background:#b5613c"></span>terracotta</span>
       <span class="swatch"><span class="dot" style="background:#c98a3c"></span>ochre</span>
@@ -120,6 +124,24 @@
       (_, name, def) => (overrides[name] != null && overrides[name] !== '' ? overrides[name] : def));
   }
 
+  // Flatten a resolved prompt into one natural-language sentence (for Midjourney/DALL·E etc.).
+  // JSON prompts → comma-joined leaf phrases; paragraph prompts pass through.
+  function toSentence(text) {
+    let obj;
+    try { obj = JSON.parse(text); } catch (e) { return text.replace(/\s+/g, ' ').trim(); }
+    const parts = [];
+    const walk = v => {
+      if (v == null) return;
+      if (typeof v === 'string' || typeof v === 'number') { parts.push(String(v)); }
+      else if (Array.isArray(v)) { v.forEach(walk); }
+      else if (typeof v === 'object') { Object.values(v).forEach(walk); }
+    };
+    walk(obj);
+    // dedupe consecutive negatives line, tidy spacing/punctuation
+    return parts.map(s => s.trim()).filter(Boolean).join(', ')
+      .replace(/\s+/g, ' ').replace(/,\s*,/g, ', ').trim();
+  }
+
   function renderChips() {
     chipsEl.innerHTML = categories.map(c =>
       `<span class="chip ${c === activeCat ? 'active' : ''}" data-cat="${esc(c)}">${esc(c)}</span>`).join('');
@@ -146,7 +168,7 @@
     return `<article class="card" data-id="${p.id}">
       <div class="row">
         <span class="cat">${esc(p.category)}</span>
-        <span class="ratio">▢ ${esc(p.aspect)} · ${esc(p.model)}</span>
+        <span class="ratio">▢ ${esc(p.aspect)} · ${esc(p.format)}</span>
       </div>
       <h2 class="title">${esc(p.title)}</h2>
       <div class="tech">⌗ ${esc(p.technique)}</div>
@@ -154,7 +176,8 @@
       ${argsHtml}
       <pre data-pre>${esc(p.prompt)}</pre>
       <div class="actions">
-        <button class="btn primary" data-copy>📋 Copy resolved prompt</button>
+        <button class="btn primary" data-copy>📋 Copy prompt</button>
+        <button class="btn" data-sentence>Copy as sentence</button>
         <button class="btn" data-raw>Copy with {args}</button>
       </div>
     </article>`;
@@ -188,8 +211,11 @@
     const cardEl = e.target.closest('.card'); if (!cardEl) return;
     const p = DATA[+cardEl.dataset.id];
     let text = null;
+    const resolved = cardEl.querySelector('[data-pre]').textContent;
     if (e.target.closest('[data-copy]')) {
-      text = cardEl.querySelector('[data-pre]').textContent;   // resolved
+      text = resolved;                                          // resolved (as-authored)
+    } else if (e.target.closest('[data-sentence]')) {
+      text = toSentence(resolved);                              // flattened to prose
     } else if (e.target.closest('[data-raw]')) {
       text = p.prompt;                                          // with placeholders
     }

@@ -1,9 +1,22 @@
 # noa — Unisex Prompt Library
 
-A custom, tailor-made GPT Image 2 prompt library for the **Noa Unisex** brand.
+A custom, tailor-made image-prompt library for the **Noa Unisex** brand.
 All copy is **English** (no CJK text), tuned to a **warm-earth** aesthetic, and
 covers the brand's four image use cases. Open `index.html` in any browser — the
 data is bundled in `noa-prompts.js`, so no server is needed.
+
+## Platform-agnostic
+
+The prompts are plain image descriptions with **no model-specific syntax**, so
+they work with **any text-to-image model** — Midjourney, DALL·E 3, GPT Image,
+Stable Diffusion / Flux, Ideogram, Adobe Firefly, Nano Banana, and others.
+
+- **“Structured JSON” prompts** give the most control on models that parse
+  structure well (GPT Image, Flux, SD, Nano Banana).
+- For prose-only engines (**Midjourney, DALL·E**), use the **“Copy as sentence”**
+  button — it flattens a JSON prompt into one natural-language paragraph.
+- Aspect ratios are given as plain ratios (`4:5`, `1:1`, `3:2`, `9:16`); set them
+  with whatever each tool uses (`--ar 4:5`, a size dropdown, etc.).
 
 ## Brand kit (baked into every prompt default)
 
@@ -50,10 +63,12 @@ prompts surfaced five reusable techniques, each applied here:
   edit them and the prompt preview updates live.
 - **Copy resolved prompt** — copies the prompt with your values filled in (paste
   straight into GPT Image 2 / Nano Banana Pro).
+- **Copy as sentence** — flattens the (resolved) prompt into one natural-language
+  paragraph for prose-only models like Midjourney and DALL·E.
 - **Copy with {args}** — copies the template form (placeholders intact) for
   reuse in Raycast or another templating flow.
-- Each card notes a suggested **aspect ratio** and **model** (`nano_banana_pro`
-  for product/text/packaging, `soul_2` for on-model editorial).
+- Each card shows a suggested **aspect ratio** and the prompt **format**
+  (Structured JSON vs Natural language).
 
 ## Files
 

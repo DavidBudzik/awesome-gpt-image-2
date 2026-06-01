@@ -34,7 +34,6 @@ PROMPTS = [
         "technique": "Structured JSON · catalog control",
         "description": "Clean invisible-mannequin PDP shot that shows garment shape with no model — the e-commerce main-image standard.",
         "aspect": "4:5",
-        "model": "nano_banana_pro",
         "prompt": {
             "type": "ghost mannequin (invisible mannequin) e-commerce product photo",
             "garment": "{argument name=\"garment\" default=\"oversized organic-cotton crewneck tee\"}",
@@ -57,7 +56,6 @@ PROMPTS = [
         "technique": "Structured JSON · top-down flat-lay",
         "description": "Top-down folded-garment flat-lay on natural linen for catalog grids and lookbook detail pages.",
         "aspect": "1:1",
-        "model": "nano_banana_pro",
         "prompt": {
             "type": "top-down folded apparel flat-lay product photo",
             "subject": "{argument name=\"garment\" default=\"washed-linen overshirt\"}, crisply folded into a neat rectangle",
@@ -78,7 +76,6 @@ PROMPTS = [
         "technique": "Descriptor paragraph · on-model PDP",
         "description": "Full-length unisex on-model product shot, front-facing, for the primary PDP image.",
         "aspect": "4:5",
-        "model": "nano_banana_pro",
         "prompt": "Full-length e-commerce product photograph of an androgynous unisex model standing relaxed and straight-on, wearing a {argument name=\"garment\" default=\"boxy organic-cotton shirt and wide-leg trousers\"} in {argument name=\"garment color\" default=\"olive and oat cream\"}. Calm neutral expression, hands at sides, natural unposed stance, diverse casting, minimal styling. Seamless warm oat-cream studio backdrop, soft even daylight-balanced lighting with a gentle floor shadow, true-to-life warm-neutral color. Sharp focus on garment fit, fabric drape and texture clearly visible, 85mm proportions with no distortion, catalog-grade clarity. Small woven 'noa' label visible at the chest. Strictly avoid: cool blue cast, heavy retouching, plastic skin, busy background, exaggerated poses.",
     },
     {
@@ -87,7 +84,6 @@ PROMPTS = [
         "technique": "Structured JSON · hero macro",
         "description": "Close hero shot of a small accessory on a sculptural clay riser — for accessory PDP and homepage tiles.",
         "aspect": "1:1",
-        "model": "nano_banana_pro",
         "prompt": {
             "type": "macro hero product photo of a fashion accessory",
             "subject": "{argument name=\"accessory\" default=\"natural-leather card holder\"} in {argument name=\"color\" default=\"tan clay\"}",
@@ -107,7 +103,6 @@ PROMPTS = [
         "technique": "Structured JSON · color-story stack",
         "description": "Neatly stacked folded knitwear in the brand palette — ideal for a category banner or color-story hero.",
         "aspect": "3:2",
-        "model": "nano_banana_pro",
         "prompt": {
             "type": "stacked folded knitwear product hero photo",
             "subject": "a tidy vertical stack of {argument name=\"count\" default=\"5\"} folded chunky-knit sweaters",
@@ -128,7 +123,6 @@ PROMPTS = [
         "technique": "Descriptor paragraph · campaign portrait",
         "description": "Signature campaign portrait — warm low sun, plaster wall, the hero editorial image of a drop.",
         "aspect": "4:5",
-        "model": "soul_2",
         "prompt": "Editorial fashion campaign portrait of a unisex model with natural features and an effortless presence, photographed from the waist up against a warm lime-plaster wall in sun-faded terracotta. They wear a {argument name=\"outfit\" default=\"relaxed linen overshirt layered over a ribbed tank\"} in {argument name=\"palette\" default=\"olive and oat cream\"}. Late-afternoon golden sunlight rakes across the wall casting a soft long shadow, warm amber tones, gentle film grain, shallow depth of field, 50mm. Calm, confident, candid expression; natural skin texture; inclusive casting. Quiet-luxury earthy mood, organic and sustainable feel. Strictly avoid: cool tones, studio flash look, heavy makeup, plastic retouching, cluttered background.",
     },
     {
@@ -137,7 +131,6 @@ PROMPTS = [
         "technique": "Descriptor paragraph · multi-subject consistency",
         "description": "Two models styled as a coordinated unisex pair — shows range and the inclusive ethos in one frame.",
         "aspect": "3:2",
-        "model": "nano_banana_pro",
         "prompt": "Editorial lookbook photograph of two diverse unisex models standing close together in coordinated but non-matching looks: one in a {argument name=\"look a\" default=\"boxy ochre canvas chore jacket and wide trousers\"}, the other in a {argument name=\"look b\" default=\"oversized oat knit and raw-edge denim\"}. Warm Mediterranean daylight, travertine courtyard with a plaster wall in warm sand, dried grasses in the corner. Natural relaxed poses, easy body language, candid connection. Warm golden color grade, soft shadows, 35mm wide editorial framing, film-like texture. Inclusive casting, calm confident mood. Strictly avoid: cool blue cast, harsh flash, stiff catalog poses, busy props, text.",
     },
     {
@@ -146,7 +139,6 @@ PROMPTS = [
         "technique": "Structured JSON · environment editorial",
         "description": "Full-scene outdoor editorial placing the garment in a sunlit earthy landscape — seasonal campaign key art.",
         "aspect": "3:2",
-        "model": "nano_banana_pro",
         "prompt": {
             "type": "outdoor fashion editorial environmental shot",
             "subject": "a unisex model walking unhurried through the scene wearing {argument name=\"outfit\" default=\"a flowing linen set in warm sand\"}",
@@ -167,7 +159,6 @@ PROMPTS = [
         "technique": "Descriptor paragraph · motion",
         "description": "Captures fabric in motion to sell drape and flow — great for hero video stills and PDP secondary shots.",
         "aspect": "4:5",
-        "model": "nano_banana_pro",
         "prompt": "Dynamic editorial photograph of a unisex model mid-movement, turning so the {argument name=\"garment\" default=\"wide linen trousers and unbuttoned overshirt\"} in {argument name=\"color\" default=\"terracotta and oat\"} catch the air and reveal their drape and flow. Warm sand studio sweep, single warm key light from the side creating a soft directional shadow, subtle motion blur on the fabric edges while the body stays sharp, golden tone, 70mm. Energetic yet calm, organic. Strictly avoid: frozen stiff pose, cool tones, harsh contrast, cluttered set.",
     },
     {
@@ -176,7 +167,6 @@ PROMPTS = [
         "technique": "Structured JSON · material storytelling",
         "description": "Extreme close-up celebrating natural fibers and craftsmanship — the sustainability/material story tile.",
         "aspect": "1:1",
-        "model": "nano_banana_pro",
         "prompt": {
             "type": "extreme macro material detail photo",
             "subject": "the weave and seam of {argument name=\"material\" default=\"washed organic linen\"} in {argument name=\"color\" default=\"sun-faded ochre\"}, showing slub texture, topstitch, and a corozo button",
@@ -196,7 +186,6 @@ PROMPTS = [
         "technique": "Structured JSON · on-image typography",
         "description": "Square feed post announcing a new drop, with pixel-accurate headline typography in the brand voice.",
         "aspect": "1:1",
-        "model": "nano_banana_pro",
         "prompt": {
             "type": "social media announcement post for a fashion brand",
             "layout": {
@@ -219,7 +208,6 @@ PROMPTS = [
         "technique": "Structured JSON · scroll-stopping cover",
         "description": "Slide-1 carousel cover that invites a swipe — bold but warm, with a clear hook.",
         "aspect": "4:5",
-        "model": "nano_banana_pro",
         "prompt": {
             "type": "instagram carousel cover slide",
             "layout": {
@@ -239,7 +227,6 @@ PROMPTS = [
         "technique": "Structured JSON · vertical promo",
         "description": "Vertical story template for a sale or restock, with a tappable-feeling CTA and countdown space.",
         "aspect": "9:16",
-        "model": "nano_banana_pro",
         "prompt": {
             "type": "vertical instagram story promo template",
             "layout": {
@@ -260,7 +247,6 @@ PROMPTS = [
         "technique": "Structured JSON · grid-friendly flat-lay",
         "description": "Top-down trio styled for the feed with a short caption headline — keeps the grid cohesive.",
         "aspect": "1:1",
-        "model": "nano_banana_pro",
         "prompt": {
             "type": "styled top-down flat-lay social post",
             "subject": "three coordinated items: {argument name=\"items\" default=\"a folded oat tee, tan leather card holder, ochre cap\"}",
@@ -281,7 +267,6 @@ PROMPTS = [
         "technique": "Structured JSON · logo lockup",
         "description": "Hero brand wordmark composition for headers, about pages, and profile banners.",
         "aspect": "3:2",
-        "model": "nano_banana_pro",
         "prompt": {
             "type": "minimal brand wordmark hero composition",
             "wordmark": "lowercase 'noa' set large and centered in a modern humanist sans with wide tracking",
@@ -299,7 +284,6 @@ PROMPTS = [
         "technique": "Structured JSON · physical collateral",
         "description": "Recycled-card hang tag plus woven care label mockup — the touchpoints that signal craft and sustainability.",
         "aspect": "1:1",
-        "model": "nano_banana_pro",
         "prompt": {
             "type": "product collateral mockup — hang tag and care label",
             "items": {
@@ -318,7 +302,6 @@ PROMPTS = [
         "technique": "Structured JSON · unboxing mockup",
         "description": "Sustainable mailer and tissue unboxing scene — the shareable first-impression moment.",
         "aspect": "4:5",
-        "model": "nano_banana_pro",
         "prompt": {
             "type": "sustainable packaging unboxing mockup",
             "subject": "an open recycled-cardboard mailer box in warm kraft tone, lowercase 'noa' printed on the lid, garment wrapped in oat tissue with a terracotta paper sticker reading '{argument name=\"sticker\" default=\"hello, noa\"}'",
@@ -334,7 +317,6 @@ PROMPTS = [
         "technique": "Structured JSON · profile mark",
         "description": "Clean circular profile/avatar mark for social and app — instantly recognizable at small sizes.",
         "aspect": "1:1",
-        "model": "nano_banana_pro",
         "prompt": {
             "type": "circular brand avatar / profile mark",
             "design": "lowercase 'noa' monogram centered, modern humanist sans, on a {argument name=\"bg\" default=\"warm terracotta\"} circle",
@@ -358,6 +340,7 @@ def main():
         import re
         search_src = prompt_str.replace('\\"', '"')
         args = re.findall(r'\{argument name="([^"]+)" default="([^"]*)"\}', search_src)
+        fmt = "Structured JSON" if isinstance(prompt, dict) else "Natural language"
         records.append({
             "id": i,
             "category": p["category"],
@@ -365,7 +348,7 @@ def main():
             "technique": p["technique"],
             "description": p["description"],
             "aspect": p["aspect"],
-            "model": p["model"],
+            "format": fmt,
             "prompt": prompt_str,
             "args": [{"name": a, "default": d} for a, d in args],
         })

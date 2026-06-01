@@ -7,7 +7,7 @@ window.NOA_PROMPTS = [
   "technique": "Structured JSON · catalog control",
   "description": "Clean invisible-mannequin PDP shot that shows garment shape with no model — the e-commerce main-image standard.",
   "aspect": "4:5",
-  "model": "nano_banana_pro",
+  "format": "Structured JSON",
   "prompt": "{\n  \"type\": \"ghost mannequin (invisible mannequin) e-commerce product photo\",\n  \"garment\": \"{argument name=\\\"garment\\\" default=\\\"oversized organic-cotton crewneck tee\\\"}\",\n  \"color\": \"{argument name=\\\"garment color\\\" default=\\\"warm sand\\\"}\",\n  \"presentation\": \"garment shaped as if worn by an invisible body, hollow neckline and cuffs visible, symmetrical, gently three-dimensional, no mannequin, no person\",\n  \"background\": \"seamless oat-cream studio backdrop, soft floor gradient\",\n  \"photography\": {\n    \"composition\": \"centered, full garment in frame, generous negative space, straight-on eye level\",\n    \"lighting\": \"large soft frontal softbox with subtle fill, gentle natural shadow under hem\",\n    \"lens\": \"85mm look, true-to-life proportions, no distortion\",\n    \"quality\": \"ultra-sharp fabric weave, accurate warm-neutral color, catalog-grade\"\n  },\n  \"brand\": \"discreet woven 'noa' label at inner collar\",\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
   "args": [
    {
@@ -27,7 +27,7 @@ window.NOA_PROMPTS = [
   "technique": "Structured JSON · top-down flat-lay",
   "description": "Top-down folded-garment flat-lay on natural linen for catalog grids and lookbook detail pages.",
   "aspect": "1:1",
-  "model": "nano_banana_pro",
+  "format": "Structured JSON",
   "prompt": "{\n  \"type\": \"top-down folded apparel flat-lay product photo\",\n  \"subject\": \"{argument name=\\\"garment\\\" default=\\\"washed-linen overshirt\\\"}, crisply folded into a neat rectangle\",\n  \"color\": \"{argument name=\\\"garment color\\\" default=\\\"terracotta\\\"}\",\n  \"surface\": \"textured natural linen sweep in oat cream with soft visible weave\",\n  \"props\": \"one sprig of dried olive branch, a folded care card, kept minimal at the corner\",\n  \"photography\": {\n    \"composition\": \"perfect 90° overhead, garment centered, balanced margins\",\n    \"lighting\": \"soft directional daylight from upper-left, long gentle shadows, warm tone\",\n    \"quality\": \"high detail on fabric texture and fold edges, true color\"\n  },\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
   "args": [
    {
@@ -47,7 +47,7 @@ window.NOA_PROMPTS = [
   "technique": "Descriptor paragraph · on-model PDP",
   "description": "Full-length unisex on-model product shot, front-facing, for the primary PDP image.",
   "aspect": "4:5",
-  "model": "nano_banana_pro",
+  "format": "Natural language",
   "prompt": "Full-length e-commerce product photograph of an androgynous unisex model standing relaxed and straight-on, wearing a {argument name=\"garment\" default=\"boxy organic-cotton shirt and wide-leg trousers\"} in {argument name=\"garment color\" default=\"olive and oat cream\"}. Calm neutral expression, hands at sides, natural unposed stance, diverse casting, minimal styling. Seamless warm oat-cream studio backdrop, soft even daylight-balanced lighting with a gentle floor shadow, true-to-life warm-neutral color. Sharp focus on garment fit, fabric drape and texture clearly visible, 85mm proportions with no distortion, catalog-grade clarity. Small woven 'noa' label visible at the chest. Strictly avoid: cool blue cast, heavy retouching, plastic skin, busy background, exaggerated poses.",
   "args": [
    {
@@ -67,7 +67,7 @@ window.NOA_PROMPTS = [
   "technique": "Structured JSON · hero macro",
   "description": "Close hero shot of a small accessory on a sculptural clay riser — for accessory PDP and homepage tiles.",
   "aspect": "1:1",
-  "model": "nano_banana_pro",
+  "format": "Structured JSON",
   "prompt": "{\n  \"type\": \"macro hero product photo of a fashion accessory\",\n  \"subject\": \"{argument name=\\\"accessory\\\" default=\\\"natural-leather card holder\\\"} in {argument name=\\\"color\\\" default=\\\"tan clay\\\"}\",\n  \"staging\": \"resting on a small raw-clay pedestal, single subject, sculptural\",\n  \"background\": \"lime-plaster wall in warm sand, soft gradient\",\n  \"photography\": {\n    \"composition\": \"tight three-quarter angle, subject fills two-thirds of frame, shallow depth of field\",\n    \"lighting\": \"warm directional sunlight with soft hard-edged shadow, golden undertone\",\n    \"quality\": \"macro detail on grain and stitching, tactile, true color\"\n  },\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
   "args": [
    {
@@ -87,7 +87,7 @@ window.NOA_PROMPTS = [
   "technique": "Structured JSON · color-story stack",
   "description": "Neatly stacked folded knitwear in the brand palette — ideal for a category banner or color-story hero.",
   "aspect": "3:2",
-  "model": "nano_banana_pro",
+  "format": "Structured JSON",
   "prompt": "{\n  \"type\": \"stacked folded knitwear product hero photo\",\n  \"subject\": \"a tidy vertical stack of {argument name=\\\"count\\\" default=\\\"5\\\"} folded chunky-knit sweaters\",\n  \"color story\": \"{argument name=\\\"color story\\\" default=\\\"terracotta, ochre, olive, oat, clay\\\"} from bottom to top\",\n  \"surface\": \"travertine ledge, warm sand plaster wall behind\",\n  \"photography\": {\n    \"composition\": \"slight three-quarter angle on the stack, off-center with negative space for text\",\n    \"lighting\": \"warm window daylight from the right, soft shadows, cozy\",\n    \"quality\": \"rich knit texture, accurate warm palette, high resolution\"\n  },\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
   "args": [
    {
@@ -107,7 +107,7 @@ window.NOA_PROMPTS = [
   "technique": "Descriptor paragraph · campaign portrait",
   "description": "Signature campaign portrait — warm low sun, plaster wall, the hero editorial image of a drop.",
   "aspect": "4:5",
-  "model": "soul_2",
+  "format": "Natural language",
   "prompt": "Editorial fashion campaign portrait of a unisex model with natural features and an effortless presence, photographed from the waist up against a warm lime-plaster wall in sun-faded terracotta. They wear a {argument name=\"outfit\" default=\"relaxed linen overshirt layered over a ribbed tank\"} in {argument name=\"palette\" default=\"olive and oat cream\"}. Late-afternoon golden sunlight rakes across the wall casting a soft long shadow, warm amber tones, gentle film grain, shallow depth of field, 50mm. Calm, confident, candid expression; natural skin texture; inclusive casting. Quiet-luxury earthy mood, organic and sustainable feel. Strictly avoid: cool tones, studio flash look, heavy makeup, plastic retouching, cluttered background.",
   "args": [
    {
@@ -127,7 +127,7 @@ window.NOA_PROMPTS = [
   "technique": "Descriptor paragraph · multi-subject consistency",
   "description": "Two models styled as a coordinated unisex pair — shows range and the inclusive ethos in one frame.",
   "aspect": "3:2",
-  "model": "nano_banana_pro",
+  "format": "Natural language",
   "prompt": "Editorial lookbook photograph of two diverse unisex models standing close together in coordinated but non-matching looks: one in a {argument name=\"look a\" default=\"boxy ochre canvas chore jacket and wide trousers\"}, the other in a {argument name=\"look b\" default=\"oversized oat knit and raw-edge denim\"}. Warm Mediterranean daylight, travertine courtyard with a plaster wall in warm sand, dried grasses in the corner. Natural relaxed poses, easy body language, candid connection. Warm golden color grade, soft shadows, 35mm wide editorial framing, film-like texture. Inclusive casting, calm confident mood. Strictly avoid: cool blue cast, harsh flash, stiff catalog poses, busy props, text.",
   "args": [
    {
@@ -147,7 +147,7 @@ window.NOA_PROMPTS = [
   "technique": "Structured JSON · environment editorial",
   "description": "Full-scene outdoor editorial placing the garment in a sunlit earthy landscape — seasonal campaign key art.",
   "aspect": "3:2",
-  "model": "nano_banana_pro",
+  "format": "Structured JSON",
   "prompt": "{\n  \"type\": \"outdoor fashion editorial environmental shot\",\n  \"subject\": \"a unisex model walking unhurried through the scene wearing {argument name=\\\"outfit\\\" default=\\\"a flowing linen set in warm sand\\\"}\",\n  \"environment\": \"{argument name=\\\"location\\\" default=\\\"sun-baked terracotta steps beside an olive grove\\\"}, dry warm landscape\",\n  \"palette\": \"terracotta, sun-faded ochre, olive, warm sand, oat cream, clay\",\n  \"photography\": {\n    \"composition\": \"wide environmental framing, model small-to-mid in frame, lots of warm negative space\",\n    \"lighting\": \"golden-hour sun, long shadows, hazy warm atmosphere\",\n    \"lens\": \"35mm, natural perspective\",\n    \"quality\": \"editorial film look, fine grain, rich earthy color\"\n  },\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
   "args": [
    {
@@ -167,7 +167,7 @@ window.NOA_PROMPTS = [
   "technique": "Descriptor paragraph · motion",
   "description": "Captures fabric in motion to sell drape and flow — great for hero video stills and PDP secondary shots.",
   "aspect": "4:5",
-  "model": "nano_banana_pro",
+  "format": "Natural language",
   "prompt": "Dynamic editorial photograph of a unisex model mid-movement, turning so the {argument name=\"garment\" default=\"wide linen trousers and unbuttoned overshirt\"} in {argument name=\"color\" default=\"terracotta and oat\"} catch the air and reveal their drape and flow. Warm sand studio sweep, single warm key light from the side creating a soft directional shadow, subtle motion blur on the fabric edges while the body stays sharp, golden tone, 70mm. Energetic yet calm, organic. Strictly avoid: frozen stiff pose, cool tones, harsh contrast, cluttered set.",
   "args": [
    {
@@ -187,7 +187,7 @@ window.NOA_PROMPTS = [
   "technique": "Structured JSON · material storytelling",
   "description": "Extreme close-up celebrating natural fibers and craftsmanship — the sustainability/material story tile.",
   "aspect": "1:1",
-  "model": "nano_banana_pro",
+  "format": "Structured JSON",
   "prompt": "{\n  \"type\": \"extreme macro material detail photo\",\n  \"subject\": \"the weave and seam of {argument name=\\\"material\\\" default=\\\"washed organic linen\\\"} in {argument name=\\\"color\\\" default=\\\"sun-faded ochre\\\"}, showing slub texture, topstitch, and a corozo button\",\n  \"background\": \"out-of-focus same fabric, warm tone\",\n  \"photography\": {\n    \"composition\": \"tight macro, diagonal seam line, shallow depth of field\",\n    \"lighting\": \"warm raking sidelight emphasizing texture relief\",\n    \"quality\": \"tactile fiber detail, true natural color, premium craft feel\"\n  },\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
   "args": [
    {
@@ -207,7 +207,7 @@ window.NOA_PROMPTS = [
   "technique": "Structured JSON · on-image typography",
   "description": "Square feed post announcing a new drop, with pixel-accurate headline typography in the brand voice.",
   "aspect": "1:1",
-  "model": "nano_banana_pro",
+  "format": "Structured JSON",
   "prompt": "{\n  \"type\": \"social media announcement post for a fashion brand\",\n  \"layout\": {\n    \"background\": \"warm sand lime-plaster texture, generous space\",\n    \"hero\": \"a single {argument name=\\\"product\\\" default=\\\"folded terracotta linen set\\\"} placed lower-right with a soft shadow\",\n    \"wordmark\": \"lowercase 'noa' top-left, modern humanist sans, wide letter-spacing\",\n    \"headline\": \"{argument name=\\\"headline\\\" default=\\\"new arrivals\\\"}\",\n    \"subhead\": \"{argument name=\\\"subhead\\\" default=\\\"the warm-earth edit · made to share\\\"}\",\n    \"cta_chip\": \"{argument name=\\\"cta\\\" default=\\\"shop the drop\\\"}\"\n  },\n  \"typography\": \"clean modern sans, charcoal text on warm sand, crisp and perfectly legible, no spelling errors\",\n  \"palette\": \"terracotta, sun-faded ochre, olive, warm sand, oat cream, clay\",\n  \"mood\": \"calm, premium, organic\",\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
   "args": [
    {
@@ -235,7 +235,7 @@ window.NOA_PROMPTS = [
   "technique": "Structured JSON · scroll-stopping cover",
   "description": "Slide-1 carousel cover that invites a swipe — bold but warm, with a clear hook.",
   "aspect": "4:5",
-  "model": "nano_banana_pro",
+  "format": "Structured JSON",
   "prompt": "{\n  \"type\": \"instagram carousel cover slide\",\n  \"layout\": {\n    \"background\": \"split warm-earth color blocks in olive and oat\",\n    \"headline\": \"{argument name=\\\"hook\\\" default=\\\"5 ways to wear one shirt\\\"}\",\n    \"visual\": \"a unisex model in {argument name=\\\"garment\\\" default=\\\"an oat overshirt\\\"}, cut-out style on the color block\",\n    \"swipe_cue\": \"small arrow + 'swipe' bottom-right\",\n    \"wordmark\": \"'noa' small, bottom-left\"\n  },\n  \"typography\": \"large confident sans headline, charcoal, perfectly legible\",\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
   "args": [
    {
@@ -255,7 +255,7 @@ window.NOA_PROMPTS = [
   "technique": "Structured JSON · vertical promo",
   "description": "Vertical story template for a sale or restock, with a tappable-feeling CTA and countdown space.",
   "aspect": "9:16",
-  "model": "nano_banana_pro",
+  "format": "Structured JSON",
   "prompt": "{\n  \"type\": \"vertical instagram story promo template\",\n  \"layout\": {\n    \"background\": \"full-bleed warm terracotta gradient with subtle plaster grain\",\n    \"top\": \"lowercase 'noa' wordmark, centered\",\n    \"center_hero\": \"{argument name=\\\"product\\\" default=\\\"clay leather tote\\\"} floating with a soft shadow\",\n    \"headline\": \"{argument name=\\\"headline\\\" default=\\\"the restock is here\\\"}\",\n    \"detail_line\": \"{argument name=\\\"detail\\\" default=\\\"limited run · warm-earth essentials\\\"}\",\n    \"cta_button\": \"rounded button reading '{argument name=\\\"cta\\\" default=\\\"tap to shop\\\"}' in oat cream\"\n  },\n  \"typography\": \"clean sans, high legibility, charcoal and cream, no typos\",\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
   "args": [
    {
@@ -283,7 +283,7 @@ window.NOA_PROMPTS = [
   "technique": "Structured JSON · grid-friendly flat-lay",
   "description": "Top-down trio styled for the feed with a short caption headline — keeps the grid cohesive.",
   "aspect": "1:1",
-  "model": "nano_banana_pro",
+  "format": "Structured JSON",
   "prompt": "{\n  \"type\": \"styled top-down flat-lay social post\",\n  \"subject\": \"three coordinated items: {argument name=\\\"items\\\" default=\\\"a folded oat tee, tan leather card holder, ochre cap\\\"}\",\n  \"surface\": \"warm linen and travertine, dried olive sprig accent\",\n  \"text_overlay\": \"small headline '{argument name=\\\"headline\\\" default=\\\"everyday earth tones\\\"}' in charcoal sans, lower third\",\n  \"photography\": {\n    \"composition\": \"90° overhead, balanced triangular arrangement, space for text\",\n    \"lighting\": \"soft warm daylight, gentle shadows\",\n    \"quality\": \"crisp, tactile, true warm color\"\n  },\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
   "args": [
    {
@@ -303,7 +303,7 @@ window.NOA_PROMPTS = [
   "technique": "Structured JSON · logo lockup",
   "description": "Hero brand wordmark composition for headers, about pages, and profile banners.",
   "aspect": "3:2",
-  "model": "nano_banana_pro",
+  "format": "Structured JSON",
   "prompt": "{\n  \"type\": \"minimal brand wordmark hero composition\",\n  \"wordmark\": \"lowercase 'noa' set large and centered in a modern humanist sans with wide tracking\",\n  \"treatment\": \"{argument name=\\\"treatment\\\" default=\\\"debossed into warm sand lime-plaster\\\"}, subtle dimensional shadow\",\n  \"tagline\": \"{argument name=\\\"tagline\\\" default=\\\"unisex essentials in warm earth\\\"}, small, below the wordmark\",\n  \"background\": \"warm plaster texture, golden directional light\",\n  \"palette\": \"terracotta, sun-faded ochre, olive, warm sand, oat cream, clay\",\n  \"typography\": \"perfectly clean letterforms, accurate spacing, no artifacts\",\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
   "args": [
    {
@@ -323,7 +323,7 @@ window.NOA_PROMPTS = [
   "technique": "Structured JSON · physical collateral",
   "description": "Recycled-card hang tag plus woven care label mockup — the touchpoints that signal craft and sustainability.",
   "aspect": "1:1",
-  "model": "nano_banana_pro",
+  "format": "Structured JSON",
   "prompt": "{\n  \"type\": \"product collateral mockup — hang tag and care label\",\n  \"items\": {\n    \"hang_tag\": \"rectangular recycled kraft card with lowercase 'noa' wordmark, '{argument name=\\\"tagline\\\" default=\\\"made warm, made to last\\\"}', and a small olive-branch icon, jute string threaded through a brass eyelet\",\n    \"care_label\": \"woven cotton care label in oat with charcoal text reading '100% organic cotton'\"\n  },\n  \"staging\": \"resting on washed linen in warm sand, top-down, soft daylight\",\n  \"photography\": {\n    \"composition\": \"overhead, two items balanced, negative space\",\n    \"quality\": \"tactile paper and weave detail, true color\"\n  },\n  \"typography\": \"crisp legible sans, no spelling errors\",\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
   "args": [
    {
@@ -339,7 +339,7 @@ window.NOA_PROMPTS = [
   "technique": "Structured JSON · unboxing mockup",
   "description": "Sustainable mailer and tissue unboxing scene — the shareable first-impression moment.",
   "aspect": "4:5",
-  "model": "nano_banana_pro",
+  "format": "Structured JSON",
   "prompt": "{\n  \"type\": \"sustainable packaging unboxing mockup\",\n  \"subject\": \"an open recycled-cardboard mailer box in warm kraft tone, lowercase 'noa' printed on the lid, garment wrapped in oat tissue with a terracotta paper sticker reading '{argument name=\\\"sticker\\\" default=\\\"hello, noa\\\"}'\",\n  \"contents\": \"a glimpse of {argument name=\\\"garment\\\" default=\\\"folded ochre linen\\\"} inside\",\n  \"staging\": \"on a travertine surface, dried grass sprig beside it, warm daylight\",\n  \"photography\": {\n    \"composition\": \"three-quarter top angle, inviting, negative space upper area\",\n    \"lighting\": \"soft warm window light\",\n    \"quality\": \"premium tactile detail, true earthy color\"\n  },\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
   "args": [
    {
@@ -359,7 +359,7 @@ window.NOA_PROMPTS = [
   "technique": "Structured JSON · profile mark",
   "description": "Clean circular profile/avatar mark for social and app — instantly recognizable at small sizes.",
   "aspect": "1:1",
-  "model": "nano_banana_pro",
+  "format": "Structured JSON",
   "prompt": "{\n  \"type\": \"circular brand avatar / profile mark\",\n  \"design\": \"lowercase 'noa' monogram centered, modern humanist sans, on a {argument name=\\\"bg\\\" default=\\\"warm terracotta\\\"} circle\",\n  \"accent\": \"a tiny minimalist olive-leaf glyph above the wordmark\",\n  \"treatment\": \"flat, high-contrast for legibility at 64px, subtle warm grain\",\n  \"typography\": \"perfect letterforms, balanced spacing\",\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
   "args": [
    {
