@@ -1,0 +1,96 @@
+# noa — Unisex Prompt Library
+
+A custom, tailor-made image-prompt library for the **Noa Unisex** brand.
+All copy is **English** (no CJK text), tuned to a **warm-earth** aesthetic, and
+covers the brand's four image use cases. Open `index.html` in any browser — the
+data is bundled in `noa-prompts.js`, so no server is needed.
+
+## Platform-agnostic
+
+The prompts are plain image descriptions with **no model-specific syntax**, so
+they work with **any text-to-image model** — Midjourney, DALL·E 3, GPT Image,
+Stable Diffusion / Flux, Ideogram, Adobe Firefly, Nano Banana, and others.
+
+- **“Structured JSON” prompts** give the most control on models that parse
+  structure well (GPT Image, Flux, SD, Nano Banana).
+- For prose-only engines (**Midjourney, DALL·E**), use the **“Copy as sentence”**
+  button — it flattens a JSON prompt into one natural-language paragraph.
+- Aspect ratios are given as plain ratios (`4:5`, `1:1`, `3:2`, `9:16`); set them
+  with whatever each tool uses (`--ar 4:5`, a size dropdown, etc.).
+
+## Brand kit (baked into every prompt default)
+
+| Token | Values |
+|-------|--------|
+| Palette | terracotta · sun-faded ochre · olive · clay · warm sand · oat cream |
+| Materials | organic cotton · washed linen · raw-edge denim · chunky knit · brushed canvas · natural leather |
+| Mood | warm, sunlit, organic, calm, inclusive, unisex, sustainable |
+| Wordmark | lowercase **noa**, modern humanist sans, wide letter-spacing |
+| Surfaces | lime-plaster, travertine, raw clay, linen, Mediterranean daylight |
+
+## What I analyzed (techniques from the source collection)
+
+Reviewing the repo's top Product Marketing, E-commerce, Social and editorial
+prompts surfaced five reusable techniques, each applied here:
+
+1. **Structured-JSON art direction** — explicit `type / scene / subject /
+   photography{composition,lens,lighting,quality} / background` keys give
+   repeatable, controllable results. Used for all product, packaging, and
+   social-layout prompts.
+2. **Layered descriptor paragraphs** — dense lighting + material + mood language
+   for editorial/on-model shots where natural phrasing reads better than JSON.
+3. **`{argument name="…" default="…"}` templating** — every prompt is a reusable
+   template; swap product, color, headline, etc. without rewriting.
+4. **Negative steering** — a shared "strictly avoid…" clause locks the look
+   (kills cool tones, plastic sheen, busy sets) so a whole drop stays on-brand.
+5. **Quoted on-image copy** — exact headline/label text in quotes leverages GPT
+   Image 2's pixel-accurate text rendering for social cards and packaging.
+
+## Library contents (18 prompts)
+
+- **E-commerce Product (5):** ghost-mannequin, linen flat-lay, on-model PDP,
+  accessory macro, knitwear color-stack.
+- **Lookbook / Editorial (5):** sunlit portrait, unisex duo, Mediterranean
+  environment, movement/drape study, fabric texture macro.
+- **Social Media (4):** drop card, carousel cover, story/reel template,
+  product-trio flat-lay.
+- **Brand & Packaging (4):** wordmark lockup, hang tag + care label, mailer
+  unboxing, avatar mark.
+
+## Using the page
+
+- **Customize variables** — each card exposes its `{argument}` fields as inputs;
+  edit them and the prompt preview updates live.
+- **Copy prompt** — copies the prompt with your values filled in (paste straight
+  into your image model of choice).
+- **Copy as sentence** — flattens the (resolved) prompt into one natural-language
+  paragraph for prose-only models like Midjourney and DALL·E.
+- **Copy with {args}** — copies the template form (placeholders intact) for
+  reuse in Raycast or another templating flow.
+- Each card shows a suggested **aspect ratio** and the prompt **format**
+  (Structured JSON vs Natural language).
+
+## Preview images
+
+Each card shows a generated preview of its own prompt (or a "preview pending"
+placeholder until you add one). The full mapping of **18 images** lives in:
+
+- **`IMAGES.md`** — human-readable checklist: exact filename + aspect ratio +
+  ready-to-paste generation prompt (structured *and* one-sentence) per card.
+- **`image-manifest.json`** — the same data, machine-readable (for batch
+  generation scripts).
+
+Workflow: generate each image with any model → save it to the exact
+`images/NN-slug.webp` path → the card displays it automatically (click to
+enlarge). Keep each card's aspect ratio so previews aren't cropped. To use
+`.png`/`.jpg`, change `IMG_EXT` in `build.py` and re-run.
+
+## Files
+
+| File | Purpose |
+|------|---------|
+| `index.html` | The warm-earth library UI. |
+| `noa-prompts.js` | Auto-generated data (`window.NOA_PROMPTS`). Do not edit by hand. |
+| `build.py` | Holds the hand-authored prompts and emits `noa-prompts.js`, `image-manifest.json`, and `IMAGES.md`. Edit here to add/adjust prompts, then re-run it. |
+| `IMAGES.md` / `image-manifest.json` | The preview-image map (checklist + prompts). Auto-generated. |
+| `images/` | Drop generated preview files here (see `images/README.md`). |
