@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>noa · prompt library</title>
+<style>
+  :root {
+    --bg: #f4ece1; --bg2: #efe3d4; --card: #fbf6ee; --line: #e2d2bd;
+    --ink: #3a3027; --muted: #8a7a66; --terra: #b5613c; --olive: #6f7445;
+    --ochre: #c98a3c; --clay: #a9694e; --code: #2f2820; --codeink: #ece0cf;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.6 "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  a { color: var(--terra); }
+  header {
+    background: linear-gradient(160deg, #efe1cf 0%, #e9d6bf 100%);
+    border-bottom: 1px solid var(--line); padding: 34px 24px 26px;
+  }
+  .head-inner { max-width: 1400px; margin: 0 auto; }
+  .wordmark { font-size: 40px; font-weight: 800; letter-spacing: .22em; color: var(--ink); margin: 0; }
+  .tagline { color: var(--muted); margin: 4px 0 0; letter-spacing: .04em; }
+  .kit { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .swatch { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--muted); background: rgba(255,255,255,.45); border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px 4px 5px; }
+  .dot { width: 14px; height: 14px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(0,0,0,.06); }
+  .controls { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; align-items: center; max-width: 1400px; }
+  #search {
+    flex: 1 1 280px; min-width: 200px; padding: 11px 15px; border-radius: 12px;
+    border: 1px solid var(--line); background: #fff; color: var(--ink); font-size: 14px;
+  }
+  #search:focus { outline: 2px solid var(--terra); }
+  .count { color: var(--muted); font-size: 13px; white-space: nowrap; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; max-width: 1400px; margin: 18px auto 0; padding: 0 24px; }
+  .chip { padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--muted); font-size: 13px; cursor: pointer; user-select: none; transition: .15s; }
+  .chip:hover { border-color: var(--clay); }
+  .chip.active { background: var(--terra); color: #fff; border-color: var(--terra); }
+  main {
+    display: grid; gap: 20px; padding: 24px; max-width: 1400px; margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+    padding: 18px; display: flex; flex-direction: column; gap: 11px;
+    box-shadow: 0 1px 2px rgba(120,90,60,.05);
+  }
+  .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .cat { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; padding: 3px 9px; border-radius: 7px; background: var(--bg2); color: var(--clay); }
+  .ratio { font-size: 11px; color: var(--muted); margin-left: auto; }
+  .title { font-size: 18px; font-weight: 700; margin: 0; }
+  .tech { font-size: 12px; color: var(--olive); font-weight: 600; }
+  .desc { color: var(--muted); font-size: 13.5px; margin: 0; }
+  pre {
+    margin: 0; background: var(--code); color: var(--codeink); border-radius: 11px;
+    padding: 12px 13px; font: 12px/1.5 "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+    max-height: 230px; overflow: auto; white-space: pre-wrap; word-break: break-word;
+  }
+  .args { display: flex; flex-direction: column; gap: 7px; }
+  .arg-h { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+  .arg { display: grid; grid-template-columns: minmax(90px, 38%) 1fr; gap: 8px; align-items: center; }
+  .arg label { font-size: 12px; color: var(--ink); }
+  .arg input { padding: 6px 9px; border: 1px solid var(--line); border-radius: 8px; background: #fff; font-size: 12.5px; color: var(--ink); width: 100%; }
+  .arg input:focus { outline: 1px solid var(--olive); }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; padding-top: 4px; }
+  .btn { border: 1px solid var(--line); background: #fff; color: var(--ink); padding: 8px 13px; border-radius: 9px; font-size: 13px; cursor: pointer; text-decoration: none; }
+  .btn:hover { border-color: var(--terra); }
+  .btn.primary { background: var(--terra); border-color: var(--terra); color: #fff; }
+  .btn.primary:hover { background: var(--clay); }
+  .meta { font-size: 11.5px; color: var(--muted); }
+  .empty { grid-column: 1/-1; text-align: center; color: var(--muted); padding: 60px 0; }
+  footer { text-align: center; color: var(--muted); font-size: 12px; padding: 24px 20px 60px; }
+  footer code { background: var(--bg2); padding: 1px 6px; border-radius: 5px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="head-inner">
+    <h1 class="wordmark">noa</h1>
+    <p class="tagline">unisex essentials in warm earth — prompt library for GPT&nbsp;Image&nbsp;2</p>
+    <div class="kit">
+      <span class="swatch"><span class="dot" style="background:#b5613c"></span>terracotta</span>
+      <span class="swatch"><span class="dot" style="background:#c98a3c"></span>ochre</span>
+      <span class="swatch"><span class="dot" style="background:#6f7445"></span>olive</span>
+      <span class="swatch"><span class="dot" style="background:#a9694e"></span>clay</span>
+      <span class="swatch"><span class="dot" style="background:#d9c3a3"></span>warm sand</span>
+      <span class="swatch"><span class="dot" style="background:#f1e6d4"></span>oat cream</span>
+    </div>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search prompts, techniques, use cases…" />
+      <span class="count" id="count"></span>
+    </div>
+  </div>
+</header>
+<div class="chips" id="chips"></div>
+<main id="grid"></main>
+<footer>
+  Hand-authored for <strong>Noa Unisex</strong> · all-English, warm-earth palette · adapted from techniques in this repo's collection.<br>
+  Edit prompts in <code>build.py</code>, then run <code>python3 noa-unisex-library/build.py</code> to refresh.
+</footer>
+
+<script src="noa-prompts.js"></script>
+<script>
+  const DATA = (window.NOA_PROMPTS || []);
+  const grid = document.getElementById('grid');
+  const chipsEl = document.getElementById('chips');
+  const searchEl = document.getElementById('search');
+  const countEl = document.getElementById('count');
+  let activeCat = 'All';
+  const categories = ['All', ...Array.from(new Set(DATA.map(p => p.category)))];
+
+  function esc(s) {
+    return (s || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  }
+
+  // Replace {argument name="X" default="Y"} with the current field value (or default).
+  function resolve(p, overrides) {
+    return p.prompt.replace(/\{argument name=\\?"([^"\\]+)\\?" default=\\?"([^"\\]*)\\?"\}/g,
+      (_, name, def) => (overrides[name] != null && overrides[name] !== '' ? overrides[name] : def));
+  }
+
+  function renderChips() {
+    chipsEl.innerHTML = categories.map(c =>
+      `<span class="chip ${c === activeCat ? 'active' : ''}" data-cat="${esc(c)}">${esc(c)}</span>`).join('');
+  }
+
+  function filtered() {
+    const q = searchEl.value.trim().toLowerCase();
+    return DATA.filter(p => {
+      if (activeCat !== 'All' && p.category !== activeCat) return false;
+      if (!q) return true;
+      return (p.title + ' ' + p.category + ' ' + p.technique + ' ' + p.description + ' ' + p.prompt).toLowerCase().includes(q);
+    });
+  }
+
+  function card(p) {
+    const argsHtml = p.args.length ? `
+      <div class="args">
+        <div class="arg-h">Customize ${p.args.length} variable${p.args.length > 1 ? 's' : ''}</div>
+        ${p.args.map(a => `<div class="arg">
+          <label title="${esc(a.name)}">${esc(a.name)}</label>
+          <input data-arg="${esc(a.name)}" value="${esc(a.default)}" />
+        </div>`).join('')}
+      </div>` : '';
+    return `<article class="card" data-id="${p.id}">
+      <div class="row">
+        <span class="cat">${esc(p.category)}</span>
+        <span class="ratio">▢ ${esc(p.aspect)} · ${esc(p.model)}</span>
+      </div>
+      <h2 class="title">${esc(p.title)}</h2>
+      <div class="tech">⌗ ${esc(p.technique)}</div>
+      <p class="desc">${esc(p.description)}</p>
+      ${argsHtml}
+      <pre data-pre>${esc(p.prompt)}</pre>
+      <div class="actions">
+        <button class="btn primary" data-copy>📋 Copy resolved prompt</button>
+        <button class="btn" data-raw>Copy with {args}</button>
+      </div>
+    </article>`;
+  }
+
+  function render() {
+    const list = filtered();
+    countEl.textContent = `${list.length} of ${DATA.length} prompts`;
+    grid.innerHTML = list.length ? list.map(card).join('') : `<div class="empty">No prompts match.</div>`;
+    // live-update the visible prompt as args change
+    grid.querySelectorAll('.card').forEach(cardEl => {
+      const p = DATA[+cardEl.dataset.id];
+      const pre = cardEl.querySelector('[data-pre]');
+      const update = () => {
+        const ov = {};
+        cardEl.querySelectorAll('[data-arg]').forEach(inp => ov[inp.dataset.arg] = inp.value);
+        pre.textContent = resolve(p, ov);
+      };
+      cardEl.querySelectorAll('[data-arg]').forEach(inp => inp.addEventListener('input', update));
+      update();
+    });
+  }
+
+  chipsEl.addEventListener('click', e => {
+    const c = e.target.dataset.cat; if (!c) return;
+    activeCat = c; renderChips(); render();
+  });
+  searchEl.addEventListener('input', render);
+
+  grid.addEventListener('click', e => {
+    const cardEl = e.target.closest('.card'); if (!cardEl) return;
+    const p = DATA[+cardEl.dataset.id];
+    let text = null;
+    if (e.target.closest('[data-copy]')) {
+      text = cardEl.querySelector('[data-pre]').textContent;   // resolved
+    } else if (e.target.closest('[data-raw]')) {
+      text = p.prompt;                                          // with placeholders
+    }
+    if (text != null) {
+      const btn = e.target.closest('button');
+      navigator.clipboard.writeText(text).then(() => {
+        const t = btn.textContent; btn.textContent = '✓ Copied!';
+        setTimeout(() => btn.textContent = t, 1200);
+      });
+    }
+  });
+
+  renderChips();
+  render();
+</script>
+</body>
+</html>
