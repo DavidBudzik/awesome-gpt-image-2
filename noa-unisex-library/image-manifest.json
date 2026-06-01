@@ -1,0 +1,205 @@
+{
+  "count": 18,
+  "dir": "images",
+  "ext": "webp",
+  "images": [
+    {
+      "id": 0,
+      "file": "images/01-ghost-mannequin-invisible-apparel.webp",
+      "title": "Ghost-Mannequin Invisible Apparel",
+      "category": "E-commerce Product",
+      "aspect": "4:5",
+      "format": "Structured JSON",
+      "alt": "Ghost-Mannequin Invisible Apparel — Noa Unisex preview (E-commerce Product)",
+      "prompt": "{\n  \"type\": \"ghost mannequin (invisible mannequin) e-commerce product photo\",\n  \"garment\": \"oversized organic-cotton crewneck tee\",\n  \"color\": \"warm sand\",\n  \"presentation\": \"garment shaped as if worn by an invisible body, hollow neckline and cuffs visible, symmetrical, gently three-dimensional, no mannequin, no person\",\n  \"background\": \"seamless oat-cream studio backdrop, soft floor gradient\",\n  \"photography\": {\n    \"composition\": \"centered, full garment in frame, generous negative space, straight-on eye level\",\n    \"lighting\": \"large soft frontal softbox with subtle fill, gentle natural shadow under hem\",\n    \"lens\": \"85mm look, true-to-life proportions, no distortion\",\n    \"quality\": \"ultra-sharp fabric weave, accurate warm-neutral color, catalog-grade\"\n  },\n  \"brand\": \"discreet woven 'noa' label at inner collar\",\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
+      "prompt_sentence": "ghost mannequin (invisible mannequin) e-commerce product photo, oversized organic-cotton crewneck tee, warm sand, garment shaped as if worn by an invisible body, hollow neckline and cuffs visible, symmetrical, gently three-dimensional, no mannequin, no person, seamless oat-cream studio backdrop, soft floor gradient, centered, full garment in frame, generous negative space, straight-on eye level, large soft frontal softbox with subtle fill, gentle natural shadow under hem, 85mm look, true-to-life proportions, no distortion, ultra-sharp fabric weave, accurate warm-neutral color, catalog-grade, discreet woven 'noa' label at inner collar, strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text"
+    },
+    {
+      "id": 1,
+      "file": "images/02-folded-flat-lay-on-washed-linen.webp",
+      "title": "Folded Flat-Lay on Washed Linen",
+      "category": "E-commerce Product",
+      "aspect": "1:1",
+      "format": "Structured JSON",
+      "alt": "Folded Flat-Lay on Washed Linen — Noa Unisex preview (E-commerce Product)",
+      "prompt": "{\n  \"type\": \"top-down folded apparel flat-lay product photo\",\n  \"subject\": \"washed-linen overshirt, crisply folded into a neat rectangle\",\n  \"color\": \"terracotta\",\n  \"surface\": \"textured natural linen sweep in oat cream with soft visible weave\",\n  \"props\": \"one sprig of dried olive branch, a folded care card, kept minimal at the corner\",\n  \"photography\": {\n    \"composition\": \"perfect 90° overhead, garment centered, balanced margins\",\n    \"lighting\": \"soft directional daylight from upper-left, long gentle shadows, warm tone\",\n    \"quality\": \"high detail on fabric texture and fold edges, true color\"\n  },\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
+      "prompt_sentence": "top-down folded apparel flat-lay product photo, washed-linen overshirt, crisply folded into a neat rectangle, terracotta, textured natural linen sweep in oat cream with soft visible weave, one sprig of dried olive branch, a folded care card, kept minimal at the corner, perfect 90° overhead, garment centered, balanced margins, soft directional daylight from upper-left, long gentle shadows, warm tone, high detail on fabric texture and fold edges, true color, strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text"
+    },
+    {
+      "id": 2,
+      "file": "images/03-on-model-pdp-neutral-studio.webp",
+      "title": "On-Model PDP — Neutral Studio",
+      "category": "E-commerce Product",
+      "aspect": "4:5",
+      "format": "Natural language",
+      "alt": "On-Model PDP — Neutral Studio — Noa Unisex preview (E-commerce Product)",
+      "prompt": "Full-length e-commerce product photograph of an androgynous unisex model standing relaxed and straight-on, wearing a boxy organic-cotton shirt and wide-leg trousers in olive and oat cream. Calm neutral expression, hands at sides, natural unposed stance, diverse casting, minimal styling. Seamless warm oat-cream studio backdrop, soft even daylight-balanced lighting with a gentle floor shadow, true-to-life warm-neutral color. Sharp focus on garment fit, fabric drape and texture clearly visible, 85mm proportions with no distortion, catalog-grade clarity. Small woven 'noa' label visible at the chest. Strictly avoid: cool blue cast, heavy retouching, plastic skin, busy background, exaggerated poses.",
+      "prompt_sentence": "Full-length e-commerce product photograph of an androgynous unisex model standing relaxed and straight-on, wearing a boxy organic-cotton shirt and wide-leg trousers in olive and oat cream. Calm neutral expression, hands at sides, natural unposed stance, diverse casting, minimal styling. Seamless warm oat-cream studio backdrop, soft even daylight-balanced lighting with a gentle floor shadow, true-to-life warm-neutral color. Sharp focus on garment fit, fabric drape and texture clearly visible, 85mm proportions with no distortion, catalog-grade clarity. Small woven 'noa' label visible at the chest. Strictly avoid: cool blue cast, heavy retouching, plastic skin, busy background, exaggerated poses."
+    },
+    {
+      "id": 3,
+      "file": "images/04-accessory-macro-on-clay-pedestal.webp",
+      "title": "Accessory Macro on Clay Pedestal",
+      "category": "E-commerce Product",
+      "aspect": "1:1",
+      "format": "Structured JSON",
+      "alt": "Accessory Macro on Clay Pedestal — Noa Unisex preview (E-commerce Product)",
+      "prompt": "{\n  \"type\": \"macro hero product photo of a fashion accessory\",\n  \"subject\": \"natural-leather card holder in tan clay\",\n  \"staging\": \"resting on a small raw-clay pedestal, single subject, sculptural\",\n  \"background\": \"lime-plaster wall in warm sand, soft gradient\",\n  \"photography\": {\n    \"composition\": \"tight three-quarter angle, subject fills two-thirds of frame, shallow depth of field\",\n    \"lighting\": \"warm directional sunlight with soft hard-edged shadow, golden undertone\",\n    \"quality\": \"macro detail on grain and stitching, tactile, true color\"\n  },\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
+      "prompt_sentence": "macro hero product photo of a fashion accessory, natural-leather card holder in tan clay, resting on a small raw-clay pedestal, single subject, sculptural, lime-plaster wall in warm sand, soft gradient, tight three-quarter angle, subject fills two-thirds of frame, shallow depth of field, warm directional sunlight with soft hard-edged shadow, golden undertone, macro detail on grain and stitching, tactile, true color, strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text"
+    },
+    {
+      "id": 4,
+      "file": "images/05-knitwear-stack-hero.webp",
+      "title": "Knitwear Stack Hero",
+      "category": "E-commerce Product",
+      "aspect": "3:2",
+      "format": "Structured JSON",
+      "alt": "Knitwear Stack Hero — Noa Unisex preview (E-commerce Product)",
+      "prompt": "{\n  \"type\": \"stacked folded knitwear product hero photo\",\n  \"subject\": \"a tidy vertical stack of 5 folded chunky-knit sweaters\",\n  \"color story\": \"terracotta, ochre, olive, oat, clay from bottom to top\",\n  \"surface\": \"travertine ledge, warm sand plaster wall behind\",\n  \"photography\": {\n    \"composition\": \"slight three-quarter angle on the stack, off-center with negative space for text\",\n    \"lighting\": \"warm window daylight from the right, soft shadows, cozy\",\n    \"quality\": \"rich knit texture, accurate warm palette, high resolution\"\n  },\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
+      "prompt_sentence": "stacked folded knitwear product hero photo, a tidy vertical stack of 5 folded chunky-knit sweaters, terracotta, ochre, olive, oat, clay from bottom to top, travertine ledge, warm sand plaster wall behind, slight three-quarter angle on the stack, off-center with negative space for text, warm window daylight from the right, soft shadows, cozy, rich knit texture, accurate warm palette, high resolution, strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text"
+    },
+    {
+      "id": 5,
+      "file": "images/06-sunlit-warm-earth-portrait.webp",
+      "title": "Sunlit Warm-Earth Portrait",
+      "category": "Lookbook / Editorial",
+      "aspect": "4:5",
+      "format": "Natural language",
+      "alt": "Sunlit Warm-Earth Portrait — Noa Unisex preview (Lookbook / Editorial)",
+      "prompt": "Editorial fashion campaign portrait of a unisex model with natural features and an effortless presence, photographed from the waist up against a warm lime-plaster wall in sun-faded terracotta. They wear a relaxed linen overshirt layered over a ribbed tank in olive and oat cream. Late-afternoon golden sunlight rakes across the wall casting a soft long shadow, warm amber tones, gentle film grain, shallow depth of field, 50mm. Calm, confident, candid expression; natural skin texture; inclusive casting. Quiet-luxury earthy mood, organic and sustainable feel. Strictly avoid: cool tones, studio flash look, heavy makeup, plastic retouching, cluttered background.",
+      "prompt_sentence": "Editorial fashion campaign portrait of a unisex model with natural features and an effortless presence, photographed from the waist up against a warm lime-plaster wall in sun-faded terracotta. They wear a relaxed linen overshirt layered over a ribbed tank in olive and oat cream. Late-afternoon golden sunlight rakes across the wall casting a soft long shadow, warm amber tones, gentle film grain, shallow depth of field, 50mm. Calm, confident, candid expression; natural skin texture; inclusive casting. Quiet-luxury earthy mood, organic and sustainable feel. Strictly avoid: cool tones, studio flash look, heavy makeup, plastic retouching, cluttered background."
+    },
+    {
+      "id": 6,
+      "file": "images/07-unisex-duo-pairing.webp",
+      "title": "Unisex Duo Pairing",
+      "category": "Lookbook / Editorial",
+      "aspect": "3:2",
+      "format": "Natural language",
+      "alt": "Unisex Duo Pairing — Noa Unisex preview (Lookbook / Editorial)",
+      "prompt": "Editorial lookbook photograph of two diverse unisex models standing close together in coordinated but non-matching looks: one in a boxy ochre canvas chore jacket and wide trousers, the other in a oversized oat knit and raw-edge denim. Warm Mediterranean daylight, travertine courtyard with a plaster wall in warm sand, dried grasses in the corner. Natural relaxed poses, easy body language, candid connection. Warm golden color grade, soft shadows, 35mm wide editorial framing, film-like texture. Inclusive casting, calm confident mood. Strictly avoid: cool blue cast, harsh flash, stiff catalog poses, busy props, text.",
+      "prompt_sentence": "Editorial lookbook photograph of two diverse unisex models standing close together in coordinated but non-matching looks: one in a boxy ochre canvas chore jacket and wide trousers, the other in a oversized oat knit and raw-edge denim. Warm Mediterranean daylight, travertine courtyard with a plaster wall in warm sand, dried grasses in the corner. Natural relaxed poses, easy body language, candid connection. Warm golden color grade, soft shadows, 35mm wide editorial framing, film-like texture. Inclusive casting, calm confident mood. Strictly avoid: cool blue cast, harsh flash, stiff catalog poses, busy props, text."
+    },
+    {
+      "id": 7,
+      "file": "images/08-mediterranean-outdoor-editorial.webp",
+      "title": "Mediterranean Outdoor Editorial",
+      "category": "Lookbook / Editorial",
+      "aspect": "3:2",
+      "format": "Structured JSON",
+      "alt": "Mediterranean Outdoor Editorial — Noa Unisex preview (Lookbook / Editorial)",
+      "prompt": "{\n  \"type\": \"outdoor fashion editorial environmental shot\",\n  \"subject\": \"a unisex model walking unhurried through the scene wearing a flowing linen set in warm sand\",\n  \"environment\": \"sun-baked terracotta steps beside an olive grove, dry warm landscape\",\n  \"palette\": \"terracotta, sun-faded ochre, olive, warm sand, oat cream, clay\",\n  \"photography\": {\n    \"composition\": \"wide environmental framing, model small-to-mid in frame, lots of warm negative space\",\n    \"lighting\": \"golden-hour sun, long shadows, hazy warm atmosphere\",\n    \"lens\": \"35mm, natural perspective\",\n    \"quality\": \"editorial film look, fine grain, rich earthy color\"\n  },\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
+      "prompt_sentence": "outdoor fashion editorial environmental shot, a unisex model walking unhurried through the scene wearing a flowing linen set in warm sand, sun-baked terracotta steps beside an olive grove, dry warm landscape, terracotta, sun-faded ochre, olive, warm sand, oat cream, clay, wide environmental framing, model small-to-mid in frame, lots of warm negative space, golden-hour sun, long shadows, hazy warm atmosphere, 35mm, natural perspective, editorial film look, fine grain, rich earthy color, strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text"
+    },
+    {
+      "id": 8,
+      "file": "images/09-movement-drape-study.webp",
+      "title": "Movement & Drape Study",
+      "category": "Lookbook / Editorial",
+      "aspect": "4:5",
+      "format": "Natural language",
+      "alt": "Movement & Drape Study — Noa Unisex preview (Lookbook / Editorial)",
+      "prompt": "Dynamic editorial photograph of a unisex model mid-movement, turning so the wide linen trousers and unbuttoned overshirt in terracotta and oat catch the air and reveal their drape and flow. Warm sand studio sweep, single warm key light from the side creating a soft directional shadow, subtle motion blur on the fabric edges while the body stays sharp, golden tone, 70mm. Energetic yet calm, organic. Strictly avoid: frozen stiff pose, cool tones, harsh contrast, cluttered set.",
+      "prompt_sentence": "Dynamic editorial photograph of a unisex model mid-movement, turning so the wide linen trousers and unbuttoned overshirt in terracotta and oat catch the air and reveal their drape and flow. Warm sand studio sweep, single warm key light from the side creating a soft directional shadow, subtle motion blur on the fabric edges while the body stays sharp, golden tone, 70mm. Energetic yet calm, organic. Strictly avoid: frozen stiff pose, cool tones, harsh contrast, cluttered set."
+    },
+    {
+      "id": 9,
+      "file": "images/10-fabric-texture-macro.webp",
+      "title": "Fabric & Texture Macro",
+      "category": "Lookbook / Editorial",
+      "aspect": "1:1",
+      "format": "Structured JSON",
+      "alt": "Fabric & Texture Macro — Noa Unisex preview (Lookbook / Editorial)",
+      "prompt": "{\n  \"type\": \"extreme macro material detail photo\",\n  \"subject\": \"the weave and seam of washed organic linen in sun-faded ochre, showing slub texture, topstitch, and a corozo button\",\n  \"background\": \"out-of-focus same fabric, warm tone\",\n  \"photography\": {\n    \"composition\": \"tight macro, diagonal seam line, shallow depth of field\",\n    \"lighting\": \"warm raking sidelight emphasizing texture relief\",\n    \"quality\": \"tactile fiber detail, true natural color, premium craft feel\"\n  },\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
+      "prompt_sentence": "extreme macro material detail photo, the weave and seam of washed organic linen in sun-faded ochre, showing slub texture, topstitch, and a corozo button, out-of-focus same fabric, warm tone, tight macro, diagonal seam line, shallow depth of field, warm raking sidelight emphasizing texture relief, tactile fiber detail, true natural color, premium craft feel, strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text"
+    },
+    {
+      "id": 10,
+      "file": "images/11-drop-announcement-card.webp",
+      "title": "Drop Announcement Card",
+      "category": "Social Media",
+      "aspect": "1:1",
+      "format": "Structured JSON",
+      "alt": "Drop Announcement Card — Noa Unisex preview (Social Media)",
+      "prompt": "{\n  \"type\": \"social media announcement post for a fashion brand\",\n  \"layout\": {\n    \"background\": \"warm sand lime-plaster texture, generous space\",\n    \"hero\": \"a single folded terracotta linen set placed lower-right with a soft shadow\",\n    \"wordmark\": \"lowercase 'noa' top-left, modern humanist sans, wide letter-spacing\",\n    \"headline\": \"new arrivals\",\n    \"subhead\": \"the warm-earth edit · made to share\",\n    \"cta_chip\": \"shop the drop\"\n  },\n  \"typography\": \"clean modern sans, charcoal text on warm sand, crisp and perfectly legible, no spelling errors\",\n  \"palette\": \"terracotta, sun-faded ochre, olive, warm sand, oat cream, clay\",\n  \"mood\": \"calm, premium, organic\",\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
+      "prompt_sentence": "social media announcement post for a fashion brand, warm sand lime-plaster texture, generous space, a single folded terracotta linen set placed lower-right with a soft shadow, lowercase 'noa' top-left, modern humanist sans, wide letter-spacing, new arrivals, the warm-earth edit · made to share, shop the drop, clean modern sans, charcoal text on warm sand, crisp and perfectly legible, no spelling errors, terracotta, sun-faded ochre, olive, warm sand, oat cream, clay, calm, premium, organic, strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text"
+    },
+    {
+      "id": 11,
+      "file": "images/12-carousel-cover-tile.webp",
+      "title": "Carousel Cover Tile",
+      "category": "Social Media",
+      "aspect": "4:5",
+      "format": "Structured JSON",
+      "alt": "Carousel Cover Tile — Noa Unisex preview (Social Media)",
+      "prompt": "{\n  \"type\": \"instagram carousel cover slide\",\n  \"layout\": {\n    \"background\": \"split warm-earth color blocks in olive and oat\",\n    \"headline\": \"5 ways to wear one shirt\",\n    \"visual\": \"a unisex model in an oat overshirt, cut-out style on the color block\",\n    \"swipe_cue\": \"small arrow + 'swipe' bottom-right\",\n    \"wordmark\": \"'noa' small, bottom-left\"\n  },\n  \"typography\": \"large confident sans headline, charcoal, perfectly legible\",\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
+      "prompt_sentence": "instagram carousel cover slide, split warm-earth color blocks in olive and oat, 5 ways to wear one shirt, a unisex model in an oat overshirt, cut-out style on the color block, small arrow + 'swipe' bottom-right, 'noa' small, bottom-left, large confident sans headline, charcoal, perfectly legible, strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text"
+    },
+    {
+      "id": 12,
+      "file": "images/13-story-reel-template-9-16.webp",
+      "title": "Story / Reel Template (9:16)",
+      "category": "Social Media",
+      "aspect": "9:16",
+      "format": "Structured JSON",
+      "alt": "Story / Reel Template (9:16) — Noa Unisex preview (Social Media)",
+      "prompt": "{\n  \"type\": \"vertical instagram story promo template\",\n  \"layout\": {\n    \"background\": \"full-bleed warm terracotta gradient with subtle plaster grain\",\n    \"top\": \"lowercase 'noa' wordmark, centered\",\n    \"center_hero\": \"clay leather tote floating with a soft shadow\",\n    \"headline\": \"the restock is here\",\n    \"detail_line\": \"limited run · warm-earth essentials\",\n    \"cta_button\": \"rounded button reading 'tap to shop' in oat cream\"\n  },\n  \"typography\": \"clean sans, high legibility, charcoal and cream, no typos\",\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
+      "prompt_sentence": "vertical instagram story promo template, full-bleed warm terracotta gradient with subtle plaster grain, lowercase 'noa' wordmark, centered, clay leather tote floating with a soft shadow, the restock is here, limited run · warm-earth essentials, rounded button reading 'tap to shop' in oat cream, clean sans, high legibility, charcoal and cream, no typos, strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text"
+    },
+    {
+      "id": 13,
+      "file": "images/14-product-trio-flat-lay-post.webp",
+      "title": "Product Trio Flat-Lay Post",
+      "category": "Social Media",
+      "aspect": "1:1",
+      "format": "Structured JSON",
+      "alt": "Product Trio Flat-Lay Post — Noa Unisex preview (Social Media)",
+      "prompt": "{\n  \"type\": \"styled top-down flat-lay social post\",\n  \"subject\": \"three coordinated items: a folded oat tee, tan leather card holder, ochre cap\",\n  \"surface\": \"warm linen and travertine, dried olive sprig accent\",\n  \"text_overlay\": \"small headline 'everyday earth tones' in charcoal sans, lower third\",\n  \"photography\": {\n    \"composition\": \"90° overhead, balanced triangular arrangement, space for text\",\n    \"lighting\": \"soft warm daylight, gentle shadows\",\n    \"quality\": \"crisp, tactile, true warm color\"\n  },\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
+      "prompt_sentence": "styled top-down flat-lay social post, three coordinated items: a folded oat tee, tan leather card holder, ochre cap, warm linen and travertine, dried olive sprig accent, small headline 'everyday earth tones' in charcoal sans, lower third, 90° overhead, balanced triangular arrangement, space for text, soft warm daylight, gentle shadows, crisp, tactile, true warm color, strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text"
+    },
+    {
+      "id": 14,
+      "file": "images/15-wordmark-lockup-on-plaster.webp",
+      "title": "Wordmark Lockup on Plaster",
+      "category": "Brand & Packaging",
+      "aspect": "3:2",
+      "format": "Structured JSON",
+      "alt": "Wordmark Lockup on Plaster — Noa Unisex preview (Brand & Packaging)",
+      "prompt": "{\n  \"type\": \"minimal brand wordmark hero composition\",\n  \"wordmark\": \"lowercase 'noa' set large and centered in a modern humanist sans with wide tracking\",\n  \"treatment\": \"debossed into warm sand lime-plaster, subtle dimensional shadow\",\n  \"tagline\": \"unisex essentials in warm earth, small, below the wordmark\",\n  \"background\": \"warm plaster texture, golden directional light\",\n  \"palette\": \"terracotta, sun-faded ochre, olive, warm sand, oat cream, clay\",\n  \"typography\": \"perfectly clean letterforms, accurate spacing, no artifacts\",\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
+      "prompt_sentence": "minimal brand wordmark hero composition, lowercase 'noa' set large and centered in a modern humanist sans with wide tracking, debossed into warm sand lime-plaster, subtle dimensional shadow, unisex essentials in warm earth, small, below the wordmark, warm plaster texture, golden directional light, terracotta, sun-faded ochre, olive, warm sand, oat cream, clay, perfectly clean letterforms, accurate spacing, no artifacts, strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text"
+    },
+    {
+      "id": 15,
+      "file": "images/16-hang-tag-care-label.webp",
+      "title": "Hang Tag & Care Label",
+      "category": "Brand & Packaging",
+      "aspect": "1:1",
+      "format": "Structured JSON",
+      "alt": "Hang Tag & Care Label — Noa Unisex preview (Brand & Packaging)",
+      "prompt": "{\n  \"type\": \"product collateral mockup — hang tag and care label\",\n  \"items\": {\n    \"hang_tag\": \"rectangular recycled kraft card with lowercase 'noa' wordmark, 'made warm, made to last', and a small olive-branch icon, jute string threaded through a brass eyelet\",\n    \"care_label\": \"woven cotton care label in oat with charcoal text reading '100% organic cotton'\"\n  },\n  \"staging\": \"resting on washed linen in warm sand, top-down, soft daylight\",\n  \"photography\": {\n    \"composition\": \"overhead, two items balanced, negative space\",\n    \"quality\": \"tactile paper and weave detail, true color\"\n  },\n  \"typography\": \"crisp legible sans, no spelling errors\",\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
+      "prompt_sentence": "product collateral mockup — hang tag and care label, rectangular recycled kraft card with lowercase 'noa' wordmark, 'made warm, made to last', and a small olive-branch icon, jute string threaded through a brass eyelet, woven cotton care label in oat with charcoal text reading '100% organic cotton', resting on washed linen in warm sand, top-down, soft daylight, overhead, two items balanced, negative space, tactile paper and weave detail, true color, crisp legible sans, no spelling errors, strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text"
+    },
+    {
+      "id": 16,
+      "file": "images/17-mailer-box-tissue-mockup.webp",
+      "title": "Mailer Box & Tissue Mockup",
+      "category": "Brand & Packaging",
+      "aspect": "4:5",
+      "format": "Structured JSON",
+      "alt": "Mailer Box & Tissue Mockup — Noa Unisex preview (Brand & Packaging)",
+      "prompt": "{\n  \"type\": \"sustainable packaging unboxing mockup\",\n  \"subject\": \"an open recycled-cardboard mailer box in warm kraft tone, lowercase 'noa' printed on the lid, garment wrapped in oat tissue with a terracotta paper sticker reading 'hello, noa'\",\n  \"contents\": \"a glimpse of folded ochre linen inside\",\n  \"staging\": \"on a travertine surface, dried grass sprig beside it, warm daylight\",\n  \"photography\": {\n    \"composition\": \"three-quarter top angle, inviting, negative space upper area\",\n    \"lighting\": \"soft warm window light\",\n    \"quality\": \"premium tactile detail, true earthy color\"\n  },\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
+      "prompt_sentence": "sustainable packaging unboxing mockup, an open recycled-cardboard mailer box in warm kraft tone, lowercase 'noa' printed on the lid, garment wrapped in oat tissue with a terracotta paper sticker reading 'hello, noa', a glimpse of folded ochre linen inside, on a travertine surface, dried grass sprig beside it, warm daylight, three-quarter top angle, inviting, negative space upper area, soft warm window light, premium tactile detail, true earthy color, strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text"
+    },
+    {
+      "id": 17,
+      "file": "images/18-brand-avatar-mark.webp",
+      "title": "Brand Avatar Mark",
+      "category": "Brand & Packaging",
+      "aspect": "1:1",
+      "format": "Structured JSON",
+      "alt": "Brand Avatar Mark — Noa Unisex preview (Brand & Packaging)",
+      "prompt": "{\n  \"type\": \"circular brand avatar / profile mark\",\n  \"design\": \"lowercase 'noa' monogram centered, modern humanist sans, on a warm terracotta circle\",\n  \"accent\": \"a tiny minimalist olive-leaf glyph above the wordmark\",\n  \"treatment\": \"flat, high-contrast for legibility at 64px, subtle warm grain\",\n  \"typography\": \"perfect letterforms, balanced spacing\",\n  \"negatives\": \"strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text\"\n}",
+      "prompt_sentence": "circular brand avatar / profile mark, lowercase 'noa' monogram centered, modern humanist sans, on a warm terracotta circle, a tiny minimalist olive-leaf glyph above the wordmark, flat, high-contrast for legibility at 64px, subtle warm grain, perfect letterforms, balanced spacing, strictly avoid: cool blue tones, neon colors, glossy plastic look, busy backgrounds, logos other than noa, distorted hands, warped text"
+    }
+  ]
+}

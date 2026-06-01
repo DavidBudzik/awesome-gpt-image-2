@@ -70,10 +70,27 @@ prompts surfaced five reusable techniques, each applied here:
 - Each card shows a suggested **aspect ratio** and the prompt **format**
   (Structured JSON vs Natural language).
 
+## Preview images
+
+Each card shows a generated preview of its own prompt (or a "preview pending"
+placeholder until you add one). The full mapping of **18 images** lives in:
+
+- **`IMAGES.md`** — human-readable checklist: exact filename + aspect ratio +
+  ready-to-paste generation prompt (structured *and* one-sentence) per card.
+- **`image-manifest.json`** — the same data, machine-readable (for batch
+  generation scripts).
+
+Workflow: generate each image with any model → save it to the exact
+`images/NN-slug.webp` path → the card displays it automatically (click to
+enlarge). Keep each card's aspect ratio so previews aren't cropped. To use
+`.png`/`.jpg`, change `IMG_EXT` in `build.py` and re-run.
+
 ## Files
 
 | File | Purpose |
 |------|---------|
 | `index.html` | The warm-earth library UI. |
 | `noa-prompts.js` | Auto-generated data (`window.NOA_PROMPTS`). Do not edit by hand. |
-| `build.py` | Holds the hand-authored prompts and emits `noa-prompts.js`. Edit here to add/adjust prompts, then re-run it. |
+| `build.py` | Holds the hand-authored prompts and emits `noa-prompts.js`, `image-manifest.json`, and `IMAGES.md`. Edit here to add/adjust prompts, then re-run it. |
+| `IMAGES.md` / `image-manifest.json` | The preview-image map (checklist + prompts). Auto-generated. |
+| `images/` | Drop generated preview files here (see `images/README.md`). |

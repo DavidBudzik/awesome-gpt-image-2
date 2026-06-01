@@ -48,6 +48,9 @@
     padding: 18px; display: flex; flex-direction: column; gap: 11px;
     box-shadow: 0 1px 2px rgba(120,90,60,.05);
   }
+  .preview { width: 100%; border-radius: 11px; border: 1px solid var(--line); background: var(--bg2); object-fit: cover; display: block; cursor: zoom-in; }
+  .preview-ph { width: 100%; border-radius: 11px; border: 1px dashed var(--clay); background: repeating-linear-gradient(135deg, #efe3d4, #efe3d4 10px, #ece0cf 10px, #ece0cf 20px); display: grid; place-items: center; text-align: center; color: var(--muted); font-size: 12px; padding: 12px; }
+  .preview-ph b { color: var(--clay); font-size: 13px; display: block; margin-bottom: 2px; }
   .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
   .cat { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; padding: 3px 9px; border-radius: 7px; background: var(--bg2); color: var(--clay); }
   .ratio { font-size: 11px; color: var(--muted); margin-left: auto; }
@@ -72,6 +75,9 @@
   .btn.primary:hover { background: var(--clay); }
   .meta { font-size: 11.5px; color: var(--muted); }
   .empty { grid-column: 1/-1; text-align: center; color: var(--muted); padding: 60px 0; }
+  #lb { position: fixed; inset: 0; background: rgba(40,28,18,.86); display: none; place-items: center; z-index: 50; padding: 30px; cursor: zoom-out; }
+  #lb.open { display: grid; }
+  #lb img { max-width: 100%; max-height: 100%; border-radius: 10px; }
   footer { text-align: center; color: var(--muted); font-size: 12px; padding: 24px 20px 60px; }
   footer code { background: var(--bg2); padding: 1px 6px; border-radius: 5px; }
 </style>
@@ -99,6 +105,7 @@
 </header>
 <div class="chips" id="chips"></div>
 <main id="grid"></main>
+<div id="lb"><img alt="" /></div>
 <footer>
   Hand-authored for <strong>Noa Unisex</strong> · all-English, warm-earth palette · adapted from techniques in this repo's collection.<br>
   Edit prompts in <code>build.py</code>, then run <code>python3 noa-unisex-library/build.py</code> to refresh.
@@ -165,7 +172,14 @@
           <input data-arg="${esc(a.name)}" value="${esc(a.default)}" />
         </div>`).join('')}
       </div>` : '';
+    const ar = (p.aspect || '1:1').replace(':', '/');
+    const ph = `<div class="preview-ph" style="aspect-ratio:${ar}">
+        <span><b>preview pending</b>generate → save as<br>${esc(p.image)}</span></div>`;
+    const preview = `<img class="preview" loading="lazy" style="aspect-ratio:${ar}"
+        src="${esc(p.image)}" alt="${esc(p.title)}" data-full="${esc(p.image)}"
+        onerror="this.outerHTML=this.dataset.ph" data-ph="${esc(ph).replace(/"/g, '&quot;')}">`;
     return `<article class="card" data-id="${p.id}">
+      ${preview}
       <div class="row">
         <span class="cat">${esc(p.category)}</span>
         <span class="ratio">▢ ${esc(p.aspect)} · ${esc(p.format)}</span>
@@ -207,7 +221,12 @@
   });
   searchEl.addEventListener('input', render);
 
+  const lb = document.getElementById('lb');
+  lb.addEventListener('click', () => lb.classList.remove('open'));
+
   grid.addEventListener('click', e => {
+    const img = e.target.closest('.preview');
+    if (img) { lb.querySelector('img').src = img.dataset.full; lb.classList.add('open'); return; }
     const cardEl = e.target.closest('.card'); if (!cardEl) return;
     const p = DATA[+cardEl.dataset.id];
     let text = null;
